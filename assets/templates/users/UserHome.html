@@ -1,0 +1,48 @@
+{% extends 'users/userbase.html' %}
+{% block title %}
+User || Index
+{% endblock%}
+{% block index %}
+active
+{% endblock %}
+{% block content %}
+<style>
+    .jumbotron {
+        margin-top: 20%;
+        height: 450px;
+        background: rgba(0, 0, 0, 0.5);
+    }
+</style>
+<center>
+    <section id="main" class="align-items-center">
+        <div class="jumbotron">
+
+            <div class="col-md-12">
+                <h1>User Home</h1>
+                <p>Recommender systems aim to predict users’ interests and recommend product items that quite likely are
+                    interesting for them.</p>
+                <p>value of recommendation</p>
+                <p>Netflix: 2/3 of movies watched are recommended</p>
+                <p>Google news: recommendation generates 38% clickthrough</p>
+                <p>Amazon: 35% sales from recommendation</p>
+                <p>So, as per the business standpoint, the more relevant products a user finds on the platform, the
+                    higher their engagement. it results in increased revenue for the various platform.</p>
+                <p>1. Collaborative Filtering Recommendation Systems</p>
+                <p>2. Nearest Neighbors (Un-Supervised) Algorithm</p>
+                <p>Although, modern recommendation uses the both approaches called as Hybrid recommendation.</p>
+                <p>The key idea behind CF is that similar users share the same interest and that similar items are liked
+                    by a user. examples of this are found in the recommendation systems of Netflix, and Spotify.</p>
+
+                <!-- <p>Hybrid Engine</p>
+                <p>We brought together ideas from content and collaborative filtering to build an engine that gave movie
+                    suggestions to a particular user based on the estimated ratings that it had internally calculated
+                    for that user.</p>  -->
+                    
+                </div>
+                <br><br><br><br><br><br>
+        </div>
+        <br><br><br><br><br><br>
+    </section>
+</center>
+
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'users/userbase.html' %}
+{% block title %}
+User|| Viewdata
+{% endblock %}
+{% block Viewdata %}
+active
+{% endblock %}
+
+{% block content %}
+<br><br><br><br><br><br><br><br><br><br>
+
+<section id="intro">
+    <h3 align="center" style="color:rgb(185, 197, 185);font-weight:bold;">Datasets Here are:</h3>
+    <ul>
+        <li><a class="getstarted scrollto {% block Main_movieNames.csv %}{% endblock %}"
+                href="{% url 'Main_movieNames' %}" style="color:rgb(185, 197, 185)">1.Movie Names DataFrame View</a>
+        </li>
+        <li><a class="getstarted scrollto {% block Movie_main.csv %}{% endblock %}"
+                href="{% url 'Movie_main_normal_view' %}" style="color:rgb(185, 197, 185)">2.Movie_main.csv DataFrame
+                View</a></li>
+        <li><a class="getstarted scrollto {% block toy_data_confusion_matrix %}{% endblock %}"
+                href="{% url 'toy_data_confusion_matrix' %}" style="color:rgb(185, 197, 185)">3.Toy_Dataset.csv
+                Confusion Matrix View</a></li>
+        <li><a class="getstarted scrollto {% block movies_main_confusion_matrix %}{% endblock %}"
+                href="{% url 'movies_main_confusion_matrix' %}" style="color:rgb(185, 197, 185)">4.Movie_main.csv
+                Confusion Matrix View</a></li>
+    </ul>
+</section>
+<p>=========>Write something here too Great LOOkS like===========</p>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+
+{% endblock %}

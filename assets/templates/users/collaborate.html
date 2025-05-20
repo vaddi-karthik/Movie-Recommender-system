@@ -1,0 +1,78 @@
+{% extends 'users/userbase.html' %}
+{% block title %}
+User || Index
+{% endblock%}
+{% block Collaborating %}
+active
+{% endblock %}
+{% block content %}
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  bgcolor="ORANGE"
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+tr:nth-child(odd) {
+  background-color: #ADD8E6;
+}
+</style>
+
+
+<center>
+    <section id="main" class="align-items-center">
+        <div class="jumbotron">
+
+            <div class="col-md-12">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <br><br><br>
+                <h1>Select Any movie</h1>
+                <form action="{%url 'user_collaborating'%}" method="post">
+                    {%csrf_token%}
+
+                    <select name="movie_name" class="form-control" required>
+                        <option>--Select Any movie--</option>
+                        {%for m in movies %}
+                        <option value="{{m}}">{{m}}</option>
+                        {%endfor%}
+                    </select><br>
+                   <input type="submit" class="btn btn-block btn-primary"
+                                                   value="Recommender">
+                </form>
+
+                </div>
+                <br><br><br><br><br><br>
+            <h2>Collaborating Knn Movie Recommended for <font color="RED">{{movieName}}</font> </h2>
+            <table>
+                <thead>
+                <tr>
+                    <th>S.No</th>
+                    <th>Movie Name</th>
+                </tr>
+                </thead>
+                <tbody>
+                {%for m in results%}
+                <tr>
+                    <td>{{forloop.counter}}</td>
+                    <td>{{m}}</td>
+                </tr>
+                {%endfor%}
+                </tbody>
+            </table>
+
+        </div>
+        <br><br><br><br><br><br>
+    </section>
+</center>
+
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'admins/adminbase.html' %}
+{% block title %}
+Admin|| adminviewdata
+{% endblock %}
+{% block adminviewdata %}
+active
+{% endblock %}
+
+{% block content %}
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+<br><br><br><br><br><br><br><br><br><br>
+<center>
+    <section id="main" class="align-items-center">
+        <div class="jumbotron">
+
+            <div class="col-md-12">
+                <h1>View Movies</h1>
+               {{df_m|safe}}
+                </div>
+                <br><br><br><br><br><br>
+            <h2>Movies Rating</h2>
+            {{df_r|safe}}
+        </div>
+        <br><br><br><br><br><br>
+    </section>
+</center>
+
+{% endblock %}
